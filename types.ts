@@ -1,18 +1,19 @@
 
 export enum GameSection {
   INTRO = 'INTRO',
-  PART_ONE = 'PART_ONE', // Identification (Matching Final to Word)
-  PART_TWO = 'PART_TWO', // Completion (Filling in the Final)
+  PART_ONE = 'PART_ONE', // 漢字森林
+  PART_TWO = 'PART_TWO', // 拼音田野
+  PART_THREE = 'PART_THREE', // 規則與翻譯
   SUMMARY = 'SUMMARY'
 }
 
 export interface Question {
   id: number;
-  type: 'identification' | 'completion';
-  target: string; // The final (e.g., "ua")
+  type: 'identification' | 'completion' | 'rule';
+  target: string; // 題目核心
   options: string[];
   answer: string;
-  displayWord?: string; // For part 2, e.g. "花 (hu__)"
+  displayWord?: string; // 顯示用的文字
 }
 
 export interface GameState {
